@@ -5,19 +5,15 @@ import os
 kernel = aiml.Kernel()
 #kernel.learn("std-startup.xml")
 
-data_location = "./"
-
-
-#kernel.learn("./data/bot.aiml")
+data_location = "./data/"
 
 files = [f for f in os.listdir(data_location) if f.endswith('.aiml')]
 for f in files:
     kernel.learn(data_location + f)
-    #print f
+    print f
 
-#os.system('cls')
-print(chr(27) + "[2J")
-#kernel.respond("load aiml b")  
+
+print(chr(27) + "[2J") # To clear terminal
 
 # Press CTRL-C to break this loop
 while True:
