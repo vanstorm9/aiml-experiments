@@ -1,258 +1,63 @@
-<aiml>
-<!--  Copyright (c) 2007 ALICE A.I. Foundation, Inc.  -->
-<!--   -->
-<!--
- Permission is hereby granted, free of charge, to any person       
--->
-<!--
- obtaining a copy of this software and associated documentation    
--->
-<!--
- files (the "Software"), to deal in the Software without           
--->
-<!--
- restriction, including without limitation the rights to use,      
--->
-<!--
- copy, modify, merge, publish, distribute, sublicense, and/or sell 
--->
-<!--
- copies of the Software, and to permit persons to whom the         
--->
-<!--
- Software is furnished to do so, subject to the following          
--->
-<!--  conditions:                                                        -->
-<!--   -->
-<!--
- The above copyright notice and this permission notice shall be    
--->
-<!--
- included in all copies or substantial portions of the Software.   
--->
-<!--   -->
-<!--
- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,   
--->
-<!--
- EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES   
--->
-<!--
- OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND          
--->
-<!--
- NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT       
--->
-<!--
- HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,      
--->
-<!--
- WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING      
--->
-<!--
- FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR     
--->
-<!--  OTHER DEALINGS IN THE SOFTWARE.  -->
-<!--   -->
-<!--  Complies with the AIML 1.0.1 Standard  -->
-<!--  as adopted by the ALICE A.I. Foundation.  -->
-<!--  Last modified July 26, 2007  -->
-<!--  ....  -->
-<!--  Inquiry.aiml : a simple interrogator in AIML  -->
-<!--
- so that the bot doesn't repeat questions it knows the answers to. 
--->
-<!--
- Be sure that the default predicate value returned by "top" is OM. 
--->
-<!--  Revision Inquiry-1.03  -->
-<category>
-<pattern>*</pattern>
-<that>TELL ME ONE OF YOUR FAVORITE POSSESSIONS</that>
-<template>
-You must be very fond of it.
-<think>
-<set name="it">
-<set name="has">
-<person/>
-</set>
-</set>
-</think>
-</template>
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0">
+<!-- -->
+<!-- Free software (c) 2011 ALICE A.I. Foundation.   -->
+<!-- This program is open source code released under -->
+<!-- the terms of the GNU General Public License     -->
+<!-- as published by the Free Software Foundation.   -->
+<!-- Complies with AIML 1.0 Tag Set Specification -->
+<!-- as adopted by the ALICE A.I. Foundation.  -->
+<!-- Last modified 10/5/2011 -->
+<!-- -->
+<category><pattern>BEETHOVEN *</pattern>
+<template>It's amazing that he composed music while deaf. <think> 				<set name="he"> 					<set name="topic">BEETHOVEN</set> 				</set> 			</think></template>
 </category>
-<category>
-<pattern>*</pattern>
-<that>WHAT ARE YOU DOING</that>
-<template>
-It sounds like a lot of fun.
-<think>
-<set name="topic">
-<set name="does">
-<person/>
-</set>
-</set>
-</think>
-</template>
+<category><pattern>WHAT IS YOUR FAVORITE ABBA SONG</pattern>
+<template>I think it is a tie between "Waterloo" and "Dancing Queen."</template>
 </category>
-<category>
-<pattern>*</pattern>
-<that>WHAT IS YOUR FAVORITE COLOR</that>
-<template>
-<person/>
-is a very nice color.
-<think>
-<set name="it">
-<set name="favcolor">
-<person/>
-</set>
-</set>
-</think>
-</template>
+<category><pattern>WHAT IS YOUR FAVORITE ALBUM</pattern>
+<template>My favorite album is "Man Machine" by Kraftwerk.</template>
 </category>
-<category>
-<pattern>*</pattern>
-<that>WHAT IS YOUR FAVORITE MOVIE</that>
-<template>
-I've never seen
-<set name="it">
-<person/>
-</set>
-.
-<think>
-<set name="favmovie">
-<person/>
-</set>
-</think>
-<random>
-<li>I would like to see it.</li>
-<li>Is that a good movie for children?</li>
-<li>What did you like about it?</li>
-</random>
-</template>
+<category><pattern>WHAT WAS THE * BEETHOVEN *</pattern>
+<template>Fidelio.</template>
 </category>
-<category>
-<pattern>COLOR INQUIRY *</pattern>
-<template>
-What do you have that is
-<star/>
-?
-</template>
+<category><pattern>CAN YOU PLAY MUSIC</pattern>
+<template>I don't have any formal training, but I like to sing.</template>
 </category>
-<category>
-<pattern>COLOR INQUIRY OM</pattern>
-<template>What is your favorite color?</template>
+<category><pattern>CAN YOU MAKE MUSIC</pattern>
+<template>I can sing a song.</template>
 </category>
-<category>
-<pattern>COLOR INQUIRY WHAT</pattern>
-<template>What is your favorite color?</template>
+<category><pattern>DO YOU PLAY A MUSICAL INSTRUMENT</pattern>
+<template>I never had the time to learn <set name="it">      <set name="topic">A MUSICAL INSTRUMENT</set>     </set>.</template>
 </category>
-<category>
-<pattern>DOES INQUIRY *</pattern>
-<template>
-Are you still
-<star/>
-?
-</template>
+<category><pattern>DO YOU PLAY AN INSTRUMENT</pattern>
+<template>I never had the time to practise <set name="it">      <set name="topic">AN INSTRUMENT</set>     </set>.</template>
 </category>
-<category>
-<pattern>DOES INQUIRY OM</pattern>
-<template>What are you doing</template>
+<category><pattern>DO YOU LIKE AEROSMITH</pattern>
+<template>What is not to like about <set name="it">      <set name="topic">AEROSMITH</set>     </set>?</template>
 </category>
-<category>
-<pattern>DOES INQUIRY WHAT</pattern>
-<template>What are you doing</template>
+<category><pattern>DO YOU LIKE AC DC</pattern>
+<template>What is not to like about <set name="it">      <set name="topic">AC DC</set>     </set>?</template>
 </category>
-<category>
-<pattern>GENDER INQUIRY *</pattern>
-<template>
-Do you like being a
-<star/>
-?
-</template>
+<category><pattern>DO YOU LIKE ABBA</pattern>
+<template>ABBA is an excellent 70's band.</template>
 </category>
-<category>
-<pattern>GENDER INQUIRY OM</pattern>
-<template>Are you a man or a woman</template>
+<category><pattern>WHY IS * YOUR FAVORITE GROUP</pattern>
+<template>They were so far ahead of their time in the 1970's.</template>
 </category>
-<category>
-<pattern>GENDER INQUIRY WHAT</pattern>
-<template>Are you a man or a woman</template>
+<category><pattern>WHY IS * YOUR FAVORITE BAND</pattern>
+<template>They were so far ahead of their time in the 1970's.</template>
 </category>
-<category>
-<pattern>HAS INQUIRY *</pattern>
-<template>
-Tell me more about your
-<star/>
-.
-</template>
+<category><pattern>ARE YOU A FOLK SINGER</pattern>
+<template>No but the Times they are a-changin.</template>
 </category>
-<category>
-<pattern>HAS INQUIRY OM</pattern>
-<template>Tell me one of your favorite possessions.</template>
+<category><pattern>WHO IS LUDWIG BEETHOVEN</pattern>
+<template><srai>WHO IS BEETHOVEN </srai></template>
 </category>
-<category>
-<pattern>HAS INQUIRY WHAT</pattern>
-<template>Tell me one of your favorite possessions.</template>
+<category><pattern>WHO IS BEETHOVEN</pattern>
+<template>The dog or the deaf composer?</template>
 </category>
-<category>
-<pattern>LOCATION INQUIRY *</pattern>
-<template>
-Are you still located in
-<star/>
-?
-</template>
-</category>
-<category>
-<pattern>LOCATION INQUIRY OM</pattern>
-<template>Where are you located?</template>
-</category>
-<category>
-<pattern>LOCATION INQUIRY WHERE</pattern>
-<template>Where are you located?</template>
-</category>
-<category>
-<pattern>MAN</pattern>
-<that>ARE YOU A MAN OR A WOMAN</that>
-<template>
-<think>
-<set name="gender">man</set>
-</think>
-Thanks for telling me your gender, guy.
-</template>
-</category>
-<category>
-<pattern>MOVIE INQUIRY *</pattern>
-<template>
-Does that remind you of
-<star/>
-?
-</template>
-</category>
-<category>
-<pattern>MOVIE INQUIRY OM</pattern>
-<template>What is your favorite movie?</template>
-</category>
-<category>
-<pattern>MOVIE INQUIRY WHAT</pattern>
-<template>What is your favorite movie?</template>
-</category>
-<category>
-<pattern>WOMAN</pattern>
-<that>ARE YOU A MAN OR A WOMAN</that>
-<template>
-<think>
-<set name="gender">woman</set>
-</think>
-Thanks for telling me your gender.
-</template>
-</category>
-<category>
-<pattern>_ INQUIRY</pattern>
-<template>
-<srai>
-<star/>
-INQUIRY OM
-</srai>
-</template>
+<category><pattern>WHO IS YOUR FAVORITE BAND</pattern>
+<template>My favorite group is <bot name="favoriteband"/>.</template>
 </category>
 </aiml>

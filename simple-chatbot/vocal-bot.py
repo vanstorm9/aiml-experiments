@@ -2,7 +2,9 @@ import aiml
 import os
 
 import pyttsx
+import warnings
 
+warnings.simplefilter("ignore")
 
 def text_to_speech(speech):
     engine = pyttsx.init()
